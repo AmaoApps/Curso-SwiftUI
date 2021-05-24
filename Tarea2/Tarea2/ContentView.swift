@@ -258,7 +258,8 @@ struct ButtonCalculatorOperacionEquals : View {
         Button(
             action: {
                 var resultado : Float = 0
-                let rango = valorActual.startIndex...valorActual.endIndex
+                let rango = ..<valorActual.endIndex
+                print(valorPrevio[rango])
                 guard let num1 = Float(valorPrevio[rango]) else {
                     print("el numero 1 no tiene un formato valido")
                     return
@@ -273,13 +274,19 @@ struct ButtonCalculatorOperacionEquals : View {
                     resultado = num1+num2
                 case "-":
                     resultado = num1-num2
-                case "*":
+                case "x":
                     resultado = num1*num2
                 case "/":
+                    if(num2 == 0){
+                        valorPrevio = ""
+                        valorActual = "Error"
+                        return
+                    }
                     resultado = num1/num2
                 default :
                     print("No se pudo realizar la operacion")
                 }
+                valorPrevio = valorPrevio.appending(valorActual)
                 valorActual = String(resultado)
             },
             label: {
