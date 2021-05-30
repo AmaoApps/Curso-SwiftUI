@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Tarea3Parte1: View {
     var body: some View {
         VStack {
             //CABECERA IMAGEN
@@ -30,7 +30,7 @@ struct ContentView: View {
                                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                     .padding(10)
                                     .overlay(
-                                        HStack(spacing: .some(15.0)){
+                                        HStack(spacing: .some(30.0)){
                                             VStack{
                                                 Image(systemName: "star.fill")
                                                     .resizable()
@@ -78,7 +78,6 @@ struct ContentView: View {
                                             }.frame(width: 90, height: 70, alignment: .center)
                                             .padding(.top, 15)
                                         }
-                                        
                                         .padding(5)
                                     )
                             }.offset(y:40)
@@ -88,21 +87,21 @@ struct ContentView: View {
             HStack(){
                 VStack(alignment: .leading){
                     Text("John Wick")
-                        .font(.system(size: 24))
+                        .font(.system(size: 32))
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                     HStack(alignment: .top, spacing: 2){
                         Text("2019")
-                            .font(.system(size: 12))
+                            .font(.system(size: 16))
                             .fontWeight(.light)
                             .padding(.horizontal)
                         Text("PG-13")
-                            .font(.system(size: 12))
+                            .font(.system(size: 16))
                             .fontWeight(.light)
                             .padding(.horizontal)
                         Text("2h 32min")
-                            .font(.system(size: 12))
+                            .font(.system(size: 16))
                             .fontWeight(.light)
                             .padding(.horizontal)
                     }
@@ -112,13 +111,13 @@ struct ContentView: View {
                     //TODO A ALERTADIALOG
                 }, label: {
                     Text("+")
-                        .font(.system(size: 24))
+                        .font(.system(size: 32))
                         .frame(maxWidth: 50, maxHeight: 50, alignment: .center)
                 })
                 .foregroundColor(.white)
                 .background(Color.pink)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                .padding(10)
+                .padding()
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 20)
@@ -126,7 +125,7 @@ struct ContentView: View {
             //TAG LABELS
             HStack(spacing: 12){
                 Text("Action")
-                    .font(.system(size: 12))
+                    .font(.system(size: 16))
                     .fontWeight(.light)
                     .padding(.init(top: 5, leading: 8, bottom: 5, trailing: 8))
                     .overlay(
@@ -136,7 +135,7 @@ struct ContentView: View {
                             .opacity(0.5)
                     )
                 Text("Mafia")
-                    .font(.system(size: 12))
+                    .font(.system(size: 16))
                     .fontWeight(.light)
                     .padding(.init(top: 5, leading: 8, bottom: 5, trailing: 8))
                     .overlay(
@@ -146,7 +145,7 @@ struct ContentView: View {
                             .opacity(0.5)
                     )
                 Text("Weapons")
-                    .font(.system(size: 12))
+                    .font(.system(size: 16))
                     .fontWeight(.light)
                     .padding(.init(top: 5, leading: 8, bottom: 5, trailing: 8))
                     .overlay(
@@ -162,12 +161,12 @@ struct ContentView: View {
             //SUMMARY AND DESCRIPTION
             VStack{
                 Text("Plot Summary")
-                    .font(.system(size: 14))
+                    .font(.system(size: 24))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                 Text("summary")
-                    .font(.system(size: 12))
+                    .font(.system(size: 18))
                     .fontWeight(.light)
                     .lineLimit(3)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -176,7 +175,7 @@ struct ContentView: View {
             //CAST AND CREW
             VStack{
                 Text("Cast & Crew")
-                    .font(.system(size: 14))
+                    .font(.system(size: 24))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
@@ -185,11 +184,10 @@ struct ContentView: View {
                     CastCrew(nombreImagen: "brigit", nombreActor: "Bridget Moynahan", nombreRol: "Actor")
                     CastCrew(nombreImagen: "shane", nombreActor: "Ian McShane", nombreRol: "Actor")
                     CastCrew(nombreImagen: "lance", nombreActor: "Lance Reddick", nombreRol: "Actor")
-                }
+                }.padding(.horizontal)
             }
             Spacer()
         }
-        .ignoresSafeArea()
     }
 }
 
@@ -204,21 +202,27 @@ struct CastCrew : View {
         VStack{
             Image(nombreImagen)
                 .resizable()
-                .frame(width: 50, height: 50, alignment: .center)
+                .frame(width: 80, height: 80, alignment: .center)
                 .clipShape(Circle())
             Text(nombreActor)
-                .font(.system(size: 12))
+                .font(.system(size: 18))
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)
+            
             Text(nombreRol)
-                .font(.system(size: 12))
+                .font(.system(size: 18))
                 .fontWeight(.light)
         }
-        .frame(maxWidth: 70)
+        .frame(maxWidth: 90)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            Tarea3Parte1()
+                .previewDevice("iPhone 12 Pro")
+        }
     }
 }

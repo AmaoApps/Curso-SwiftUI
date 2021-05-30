@@ -11,7 +11,7 @@ import SwiftUI
 struct Tarea3App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Tarea3Parte1()
         }
     }
 }

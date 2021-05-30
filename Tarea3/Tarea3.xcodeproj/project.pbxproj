@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2D1EF8F8265B7461002FDEB7 /* Tarea3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF8F7265B7461002FDEB7 /* Tarea3App.swift */; };
-		2D1EF8FA265B7461002FDEB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF8F9265B7461002FDEB7 /* ContentView.swift */; };
+		2D1EF8FA265B7461002FDEB7 /* Tarea3Parte1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF8F9265B7461002FDEB7 /* Tarea3Parte1.swift */; };
 		2D1EF8FC265B7463002FDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D1EF8FB265B7463002FDEB7 /* Assets.xcassets */; };
 		2D1EF8FF265B7463002FDEB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D1EF8FE265B7463002FDEB7 /* Preview Assets.xcassets */; };
 		2D1EF90A265B7463002FDEB7 /* Tarea3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF909265B7463002FDEB7 /* Tarea3Tests.swift */; };
 		2D1EF915265B7463002FDEB7 /* Tarea3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF914265B7463002FDEB7 /* Tarea3UITests.swift */; };
 		2D1EF92326643B66002FDEB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D1EF92226643B66002FDEB7 /* Localizable.strings */; };
+		2D1EF92526644816002FDEB7 /* Tarea3Parte2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF92426644816002FDEB7 /* Tarea3Parte2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		2D1EF8F4265B7461002FDEB7 /* Tarea3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tarea3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D1EF8F7265B7461002FDEB7 /* Tarea3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea3App.swift; sourceTree = "<group>"; };
-		2D1EF8F9265B7461002FDEB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2D1EF8F9265B7461002FDEB7 /* Tarea3Parte1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea3Parte1.swift; sourceTree = "<group>"; };
 		2D1EF8FB265B7463002FDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D1EF8FE265B7463002FDEB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D1EF900265B7463002FDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		2D1EF914265B7463002FDEB7 /* Tarea3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea3UITests.swift; sourceTree = "<group>"; };
 		2D1EF916265B7463002FDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D1EF92226643B66002FDEB7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		2D1EF92426644816002FDEB7 /* Tarea3Parte2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea3Parte2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				2D1EF8F7265B7461002FDEB7 /* Tarea3App.swift */,
-				2D1EF8F9265B7461002FDEB7 /* ContentView.swift */,
+				2D1EF8F9265B7461002FDEB7 /* Tarea3Parte1.swift */,
+				2D1EF92426644816002FDEB7 /* Tarea3Parte2.swift */,
 				2D1EF8FB265B7463002FDEB7 /* Assets.xcassets */,
 				2D1EF900265B7463002FDEB7 /* Info.plist */,
 				2D1EF8FD265B7463002FDEB7 /* Preview Content */,
@@ -263,8 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D1EF8FA265B7461002FDEB7 /* ContentView.swift in Sources */,
+				2D1EF8FA265B7461002FDEB7 /* Tarea3Parte1.swift in Sources */,
 				2D1EF8F8265B7461002FDEB7 /* Tarea3App.swift in Sources */,
+				2D1EF92526644816002FDEB7 /* Tarea3Parte2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
