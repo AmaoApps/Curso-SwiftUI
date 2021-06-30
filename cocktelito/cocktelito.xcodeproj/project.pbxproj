@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C31A2676BBB200EEAC5A /* cocktelitoApp.swift */; };
+		2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C31C2676BBB200EEAC5A /* LoginPage.swift */; };
+		2D67C31F2676BBB300EEAC5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D67C31E2676BBB300EEAC5A /* Assets.xcassets */; };
+		2D67C3222676BBB300EEAC5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D67C3212676BBB300EEAC5A /* Preview Assets.xcassets */; };
+		2D67C3242676BBB300EEAC5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C3232676BBB300EEAC5A /* Persistence.swift */; };
+		2D67C3272676BBB300EEAC5A /* cocktelito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C3252676BBB300EEAC5A /* cocktelito.xcdatamodeld */; };
+		2D67C331268AD9BA00EEAC5A /* SplashPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C330268AD9BA00EEAC5A /* SplashPage.swift */; };
+		2D67C334268ADB7C00EEAC5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C333268ADB7C00EEAC5A /* Constants.swift */; };
+		2D67C337268B0A0D00EEAC5A /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D67C336268B09FA00EEAC5A /* BerkshireSwash-Regular.ttf */; };
+		2D67C33A268BA8ED00EEAC5A /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C339268BA8ED00EEAC5A /* Usuario.swift */; };
+		2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C33B268C101500EEAC5A /* SignUpPage.swift */; };
+		2DE42213268C266300843F19 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42212268C266300843F19 /* ViewUtils.swift */; };
+		2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42215268C4AB700843F19 /* Cocktail.swift */; };
+		2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D67C3172676BBB200EEAC5A /* cocktelito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocktelito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D67C31A2676BBB200EEAC5A /* cocktelitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocktelitoApp.swift; sourceTree = "<group>"; };
+		2D67C31C2676BBB200EEAC5A /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		2D67C31E2676BBB300EEAC5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D67C3212676BBB300EEAC5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D67C3232676BBB300EEAC5A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2D67C3262676BBB300EEAC5A /* cocktelito.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cocktelito.xcdatamodel; sourceTree = "<group>"; };
+		2D67C3282676BBB300EEAC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D67C330268AD9BA00EEAC5A /* SplashPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPage.swift; sourceTree = "<group>"; };
+		2D67C333268ADB7C00EEAC5A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2D67C336268B09FA00EEAC5A /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
+		2D67C339268BA8ED00EEAC5A /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		2D67C33B268C101500EEAC5A /* SignUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPage.swift; sourceTree = "<group>"; };
+		2DE42212268C266300843F19 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		2DE42215268C4AB700843F19 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D67C3142676BBB200EEAC5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D67C30E2676BBB200EEAC5A = {
+			isa = PBXGroup;
+			children = (
+				2D67C3192676BBB200EEAC5A /* cocktelito */,
+				2D67C3182676BBB200EEAC5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D67C3182676BBB200EEAC5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C3172676BBB200EEAC5A /* cocktelito.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D67C3192676BBB200EEAC5A /* cocktelito */ = {
+			isa = PBXGroup;
+			children = (
+				2DE42217268C4C8500843F19 /* viewModels */,
+				2D67C332268ADB2C00EEAC5A /* utils */,
+				2D67C32E268AAEA200EEAC5A /* recursos */,
+				2DE42214268C4A9D00843F19 /* model */,
+				2D67C338268BA8B000EEAC5A /* data */,
+				2D67C32F268AD99700EEAC5A /* pages */,
+				2D67C3282676BBB300EEAC5A /* Info.plist */,
+				2D67C31A2676BBB200EEAC5A /* cocktelitoApp.swift */,
+				2D67C3232676BBB300EEAC5A /* Persistence.swift */,
+				2D67C3252676BBB300EEAC5A /* cocktelito.xcdatamodeld */,
+				2D67C3202676BBB300EEAC5A /* Preview Content */,
+			);
+			path = cocktelito;
+			sourceTree = "<group>";
+		};
+		2D67C3202676BBB300EEAC5A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C3212676BBB300EEAC5A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2D67C32E268AAEA200EEAC5A /* recursos */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C335268B083F00EEAC5A /* fonts */,
+				2D67C31E2676BBB300EEAC5A /* Assets.xcassets */,
+			);
+			path = recursos;
+			sourceTree = "<group>";
+		};
+		2D67C32F268AD99700EEAC5A /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C31C2676BBB200EEAC5A /* LoginPage.swift */,
+				2D67C33B268C101500EEAC5A /* SignUpPage.swift */,
+				2D67C330268AD9BA00EEAC5A /* SplashPage.swift */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		2D67C332268ADB2C00EEAC5A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C333268ADB7C00EEAC5A /* Constants.swift */,
+				2DE42212268C266300843F19 /* ViewUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		2D67C335268B083F00EEAC5A /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C336268B09FA00EEAC5A /* BerkshireSwash-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		2D67C338268BA8B000EEAC5A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2D67C339268BA8ED00EEAC5A /* Usuario.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2DE42214268C4A9D00843F19 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2DE42215268C4AB700843F19 /* Cocktail.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2DE42217268C4C8500843F19 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */,
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D67C3162676BBB200EEAC5A /* cocktelito */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D67C32B2676BBB300EEAC5A /* Build configuration list for PBXNativeTarget "cocktelito" */;
+			buildPhases = (
+				2D67C3132676BBB200EEAC5A /* Sources */,
+				2D67C3142676BBB200EEAC5A /* Frameworks */,
+				2D67C3152676BBB200EEAC5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cocktelito;
+			productName = cocktelito;
+			productReference = 2D67C3172676BBB200EEAC5A /* cocktelito.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D67C30F2676BBB200EEAC5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					2D67C3162676BBB200EEAC5A = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 2D67C3122676BBB200EEAC5A /* Build configuration list for PBXProject "cocktelito" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D67C30E2676BBB200EEAC5A;
+			productRefGroup = 2D67C3182676BBB200EEAC5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D67C3162676BBB200EEAC5A /* cocktelito */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D67C3152676BBB200EEAC5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D67C337268B0A0D00EEAC5A /* BerkshireSwash-Regular.ttf in Resources */,
+				2D67C3222676BBB300EEAC5A /* Preview Assets.xcassets in Resources */,
+				2D67C31F2676BBB300EEAC5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D67C3132676BBB200EEAC5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D67C3272676BBB300EEAC5A /* cocktelito.xcdatamodeld in Sources */,
+				2D67C3242676BBB300EEAC5A /* Persistence.swift in Sources */,
+				2DE42213268C266300843F19 /* ViewUtils.swift in Sources */,
+				2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */,
+				2D67C33A268BA8ED00EEAC5A /* Usuario.swift in Sources */,
+				2D67C331268AD9BA00EEAC5A /* SplashPage.swift in Sources */,
+				2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */,
+				2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */,
+				2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */,
+				2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */,
+				2D67C334268ADB7C00EEAC5A /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2D67C3292676BBB300EEAC5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2D67C32A2676BBB300EEAC5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D67C32C2676BBB300EEAC5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"cocktelito/Preview Content\"";
+				DEVELOPMENT_TEAM = 9X6SR6P6J3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = cocktelito/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pe.paku.cocktelito;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2D67C32D2676BBB300EEAC5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"cocktelito/Preview Content\"";
+				DEVELOPMENT_TEAM = 9X6SR6P6J3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = cocktelito/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pe.paku.cocktelito;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D67C3122676BBB200EEAC5A /* Build configuration list for PBXProject "cocktelito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D67C3292676BBB300EEAC5A /* Debug */,
+				2D67C32A2676BBB300EEAC5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D67C32B2676BBB300EEAC5A /* Build configuration list for PBXNativeTarget "cocktelito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D67C32C2676BBB300EEAC5A /* Debug */,
+				2D67C32D2676BBB300EEAC5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2D67C3252676BBB300EEAC5A /* cocktelito.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2D67C3262676BBB300EEAC5A /* cocktelito.xcdatamodel */,
+			);
+			currentVersion = 2D67C3262676BBB300EEAC5A /* cocktelito.xcdatamodel */;
+			path = cocktelito.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2D67C30F2676BBB200EEAC5A /* Project object */;
+}
