@@ -21,6 +21,9 @@
 		2DE42213268C266300843F19 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42212268C266300843F19 /* ViewUtils.swift */; };
 		2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42215268C4AB700843F19 /* Cocktail.swift */; };
 		2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */; };
+		2DE4221D268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE4221B268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift */; };
+		2DE4221E268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE4221C268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift */; };
+		2DE42221268D7CB200843F19 /* UsuarioLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42220268D7CB200843F19 /* UsuarioLocalService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		2DE42212268C266300843F19 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		2DE42215268C4AB700843F19 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2DE4221B268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsuarioDBDTO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2DE4221C268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsuarioDBDTO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2DE42220268D7CB200843F19 /* UsuarioLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioLocalService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,6 @@
 				2D67C32F268AD99700EEAC5A /* pages */,
 				2D67C3282676BBB300EEAC5A /* Info.plist */,
 				2D67C31A2676BBB200EEAC5A /* cocktelitoApp.swift */,
-				2D67C3232676BBB300EEAC5A /* Persistence.swift */,
-				2D67C3252676BBB300EEAC5A /* cocktelito.xcdatamodeld */,
 				2D67C3202676BBB300EEAC5A /* Preview Content */,
 			);
 			path = cocktelito;
@@ -98,6 +102,7 @@
 		2D67C32E268AAEA200EEAC5A /* recursos */ = {
 			isa = PBXGroup;
 			children = (
+				2D67C3252676BBB300EEAC5A /* cocktelito.xcdatamodeld */,
 				2D67C335268B083F00EEAC5A /* fonts */,
 				2D67C31E2676BBB300EEAC5A /* Assets.xcassets */,
 			);
@@ -134,7 +139,7 @@
 		2D67C338268BA8B000EEAC5A /* data */ = {
 			isa = PBXGroup;
 			children = (
-				2D67C339268BA8ED00EEAC5A /* Usuario.swift */,
+				2DE4221A268D78CB00843F19 /* local */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		2DE42214268C4A9D00843F19 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2D67C339268BA8ED00EEAC5A /* Usuario.swift */,
 				2DE42215268C4AB700843F19 /* Cocktail.swift */,
 			);
 			path = model;
@@ -153,6 +159,25 @@
 				2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */,
 			);
 			path = viewModels;
+			sourceTree = "<group>";
+		};
+		2DE4221A268D78CB00843F19 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				2DE4221F268D7C7A00843F19 /* DTO */,
+				2D67C3232676BBB300EEAC5A /* Persistence.swift */,
+				2DE42220268D7CB200843F19 /* UsuarioLocalService.swift */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		2DE4221F268D7C7A00843F19 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				2DE4221B268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift */,
+				2DE4221C268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE42221268D7CB200843F19 /* UsuarioLocalService.swift in Sources */,
 				2D67C3272676BBB300EEAC5A /* cocktelito.xcdatamodeld in Sources */,
 				2D67C3242676BBB300EEAC5A /* Persistence.swift in Sources */,
 				2DE42213268C266300843F19 /* ViewUtils.swift in Sources */,
@@ -233,6 +259,8 @@
 				2D67C331268AD9BA00EEAC5A /* SplashPage.swift in Sources */,
 				2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */,
 				2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */,
+				2DE4221E268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */,
+				2DE4221D268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift in Sources */,
 				2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */,
 				2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */,
 				2D67C334268ADB7C00EEAC5A /* Constants.swift in Sources */,

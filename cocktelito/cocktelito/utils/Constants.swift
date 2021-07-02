@@ -14,6 +14,16 @@ struct ConstantsCocktelito {
     static let string_btn_login = "Ingresar"
     static let string_to_register = "No tengo cuenta - Registrate"
     static let string_back = "Volver"
+    static let string_signup_nv_title = "Registro"
+    static let string_signup_header = "Con nosotros, nunca te va a faltar un Cocktelito"
+    
+    static let string_signup_form_header = "Ingresa tus datos"
+    static let string_signup_form_name = "Nombre completo"
+    static let string_signup_form_email = "Correo electronico"
+    static let string_signup_form_pass = "Ingresa tu contrasenia"
+    static let string_signup_form_repass = "Ingresa nuevamente tu contrasenia"
+    static let string_signup_form_signup = "Registrarse"
+
     
     //Imagenes
     static let icon_splash_small = "splashicon_85"
