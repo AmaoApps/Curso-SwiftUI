@@ -67,6 +67,19 @@ struct UsuarioLocalService {
         return numUsuarios.count
     }
     
+    func autenticarUsuario(email: String, pass: String) -> Usuario? {
+        guard let usuarioEncontrado = getUserByEmailAndPassword(email: email, pass: pass) else {
+            return nil
+        }
+        var usuarioAuth = Usuario()
+        usuarioAuth.id = Int(usuarioEncontrado.id)
+        usuarioAuth.email = usuarioEncontrado.email ?? ""
+        usuarioAuth.password = usuarioEncontrado.password ?? ""
+        usuarioAuth.name = usuarioEncontrado.name ?? ""
+        return usuarioAuth
+        
+    }
+    
     private func getUserByEmail(email: String) -> UsuarioDBDTO? {
         let request = NSFetchRequest<UsuarioDBDTO>(entityName: "UsuarioDBDTO")
         request.predicate = NSPredicate(format: "email = %@", email)
@@ -100,6 +113,25 @@ struct UsuarioLocalService {
         //%d - Int decimal
         //%@ - String
         request.predicate = NSPredicate(format: "id = %d", id)
+        
+        do {
+            let result = try context.fetch(request)
+            guard let usuario = result.first else {
+                return nil
+            }
+            return usuario
+        } catch (let ex) {
+            print(ex)
+            return nil
+        }
+    }
+    
+    private func getUserByEmailAndPassword(email: String, pass: String)-> UsuarioDBDTO?{
+        let request = NSFetchRequest<UsuarioDBDTO>(entityName: "UsuarioDBDTO")
+        let predicateEmail = NSPredicate(format: "email == %@", email)
+        let predicatePassword = NSPredicate(format: "password == %@", pass)
+        let predicateFinal = NSCompoundPredicate.init(type: .and, subpredicates: [predicateEmail, predicatePassword])
+        request.predicate = predicateFinal
         
         do {
             let result = try context.fetch(request)

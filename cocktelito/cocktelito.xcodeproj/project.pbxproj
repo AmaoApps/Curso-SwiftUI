@@ -18,6 +18,8 @@
 		2D67C337268B0A0D00EEAC5A /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D67C336268B09FA00EEAC5A /* BerkshireSwash-Regular.ttf */; };
 		2D67C33A268BA8ED00EEAC5A /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C339268BA8ED00EEAC5A /* Usuario.swift */; };
 		2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C33B268C101500EEAC5A /* SignUpPage.swift */; };
+		2DCEDB2026901AC000EF58EA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */; };
+		2DCEDB222690F5EE00EF58EA /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB212690F5EE00EF58EA /* MainPage.swift */; };
 		2DE42213268C266300843F19 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42212268C266300843F19 /* ViewUtils.swift */; };
 		2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42215268C4AB700843F19 /* Cocktail.swift */; };
 		2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */; };
@@ -40,6 +42,8 @@
 		2D67C336268B09FA00EEAC5A /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		2D67C339268BA8ED00EEAC5A /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		2D67C33B268C101500EEAC5A /* SignUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPage.swift; sourceTree = "<group>"; };
+		2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2DCEDB212690F5EE00EF58EA /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		2DE42212268C266300843F19 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		2DE42215268C4AB700843F19 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				2D67C31C2676BBB200EEAC5A /* LoginPage.swift */,
 				2D67C33B268C101500EEAC5A /* SignUpPage.swift */,
 				2D67C330268AD9BA00EEAC5A /* SplashPage.swift */,
+				2DCEDB212690F5EE00EF58EA /* MainPage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */,
+				2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -258,8 +264,10 @@
 				2D67C33A268BA8ED00EEAC5A /* Usuario.swift in Sources */,
 				2D67C331268AD9BA00EEAC5A /* SplashPage.swift in Sources */,
 				2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */,
+				2DCEDB2026901AC000EF58EA /* LoginViewModel.swift in Sources */,
 				2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */,
 				2DE4221E268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */,
+				2DCEDB222690F5EE00EF58EA /* MainPage.swift in Sources */,
 				2DE4221D268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift in Sources */,
 				2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */,
 				2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */,

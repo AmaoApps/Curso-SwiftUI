@@ -12,28 +12,39 @@ struct LoginPageView: View {
     
     @State var usuario: Usuario = Usuario(mock: false)
     
+    @ObservedObject var viewModel : LoginViewModel
+    
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode : Binding<PresentationMode>
 
+    init() {
+        viewModel = LoginViewModel(context: PersistenceController.shared.container.viewContext)
+    }
+    
     var body: some View {
-        NavigationView {
-            ZStack{
-                Color.white
-                VStack(spacing: 10){
-                    Image(ConstantsCocktelito.icon_splash_large)
-                        .resizable()
-                        .frame(width: 180, height: 180, alignment: .center)
-                    Text(ConstantsCocktelito.string_app_name)
-                        .font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(48)))
-                    Spacer().frame(height: 50)
-                    //Formulario
-                    FormLogin(iconName: "envelope", placeHolder: "Email", txtForm: $usuario.email)
-                    FormLoginPass(iconName: "lock", placeHolder: "Contraseña", pass: $usuario.password)
-                    ButtonLogin()
-                    TextToRegisterUser()
-                }.padding()
-                
-                
+        
+        if viewModel.isLogin {
+            MainPage()
+        } else {
+            NavigationView {
+                ZStack{
+                    Color.white
+                    VStack(spacing: 10){
+                        Image(ConstantsCocktelito.icon_splash_large)
+                            .resizable()
+                            .frame(width: 180, height: 180, alignment: .center)
+                        Text(ConstantsCocktelito.string_app_name)
+                            .font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(48)))
+                        Spacer().frame(height: 50)
+                        //Formulario
+                        FormLogin(iconName: "envelope", placeHolder: "Email", txtForm: $usuario.email)
+                        FormLoginPass(iconName: "lock", placeHolder: "Contraseña", pass: $usuario.password)
+                        LoginManager(viewModel: viewModel, usuarioParaValidar: $usuario)
+                        TextToRegisterUser()
+                    }.padding()
+                    
+                    
+                }
             }
         }
     }
@@ -79,12 +90,40 @@ struct FormLoginPass: View {
     
 }
 
-struct ButtonLogin: View {
+struct LoginManager: View {
+    
+    @ObservedObject var viewModel : LoginViewModel
+    @Binding var usuarioParaValidar : Usuario
     
     var body: some View {
         
+        switch viewModel.state {
+            case .idle:
+                ButtonLogin(viewModel: viewModel, usuarioParaValidar: $usuarioParaValidar, isDisabled: false)
+            case .loading:
+                ButtonLogin(viewModel: viewModel, usuarioParaValidar: $usuarioParaValidar, isDisabled: true)
+            case .loaded(let usuarioVerificado):
+                //TODO GO TO MAIN SCREEN
+                Text("Usuario Encontrado con ID -> \(usuarioVerificado.id) con nombre de \(usuarioVerificado.name) ")
+                    
+            case .failed(let mensaje):
+                ButtonLogin(viewModel: viewModel, usuarioParaValidar: $usuarioParaValidar, isDisabled: false)
+                Text(mensaje)
+        }
+    }
+    
+}
+
+struct ButtonLogin: View {
+    
+    @ObservedObject var viewModel : LoginViewModel
+    @Binding var usuarioParaValidar : Usuario
+    @State var isDisabled : Bool
+        
+    var body: some View {
+        
         Button(action: {
-            //TODO
+            viewModel.validarUsuario(email: usuarioParaValidar.email, pass: usuarioParaValidar.password)
         }, label: {
             Text(ConstantsCocktelito.string_btn_login)
                 .font(.title3)
@@ -98,7 +137,7 @@ struct ButtonLogin: View {
         .clipShape(Capsule())
         .shadow(radius: 10)
         .padding()
-        
+        .disabled(isDisabled)
     }
     
 }
