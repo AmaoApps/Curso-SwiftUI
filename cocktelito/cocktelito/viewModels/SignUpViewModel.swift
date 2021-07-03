@@ -11,6 +11,14 @@ import CoreData
 
 class SignUpViewModel: ObservableObject {
     
+    enum State {
+        case idle
+        case loading
+        case failed(String)
+        case loaded(Usuario)
+    }
+    
+    @Published private(set) var state = State.idle
     @Published var newUsuario : Usuario = Usuario()
     
     @Published var showError : Bool = false
@@ -30,7 +38,9 @@ class SignUpViewModel: ObservableObject {
     }
     
     func registrarNuevoUsuario(usuario: Usuario){
-        self.loading = true
+        print("Inicio del registro")
+        self.state = State.loading
+        //self.loading = true
         sleep(5)
         if(!existeUsuarioPorEmail(email: usuario.email)){
             newUsuario.id = obtenerIdNuevoUsuario()
@@ -38,10 +48,13 @@ class SignUpViewModel: ObservableObject {
             newUsuario.email = usuario.email
             newUsuario.password = usuario.password
             registrarUsuario(usuario: newUsuario)
+            print("Se registro al usuario")
+            self.state = State.loaded(newUsuario)
         } else {
-            self.showError = true
+            self.state = State.failed("Usuario ya registrado")
+            print("Ya existe el correo")
         }
-        
+        print("Fin del Registro")
     }
     
     

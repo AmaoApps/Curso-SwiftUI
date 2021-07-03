@@ -10,7 +10,7 @@ import CoreData
 
 struct LoginPageView: View {
     
-    @State var usuario: Usuario = Usuario(mock: true)
+    @State var usuario: Usuario = Usuario(mock: false)
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode : Binding<PresentationMode>
