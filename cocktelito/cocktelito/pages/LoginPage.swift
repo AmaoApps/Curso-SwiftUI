@@ -24,7 +24,7 @@ struct LoginPageView: View {
     var body: some View {
         
         if viewModel.isLogin {
-            MainPage()
+            MainPage(usuarioLoged: usuario)
         } else {
             NavigationView {
                 ZStack{
