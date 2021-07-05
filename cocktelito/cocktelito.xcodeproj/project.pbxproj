@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,12 @@
 		2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C33B268C101500EEAC5A /* SignUpPage.swift */; };
 		2DCEDB2026901AC000EF58EA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */; };
 		2DCEDB222690F5EE00EF58EA /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB212690F5EE00EF58EA /* MainPage.swift */; };
+		2DCEDB24269115DF00EF58EA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB23269115DF00EF58EA /* MainViewModel.swift */; };
+		2DCEDB262692347600EF58EA /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB252692347600EF58EA /* Ingredient.swift */; };
+		2DCEDB2826923A2400EF58EA /* RestoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB2726923A2400EF58EA /* RestoBar.swift */; };
+		2DCEDB2A26923AC900EF58EA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB2926923AC900EF58EA /* Product.swift */; };
+		2DCEDB2D269249D500EF58EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCEDB2C269249D500EF58EA /* Alamofire */; };
+		2DCEDB30269249F700EF58EA /* CocktailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB2F269249F700EF58EA /* CocktailService.swift */; };
 		2DE42213268C266300843F19 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42212268C266300843F19 /* ViewUtils.swift */; };
 		2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42215268C4AB700843F19 /* Cocktail.swift */; };
 		2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */; };
@@ -44,6 +50,11 @@
 		2D67C33B268C101500EEAC5A /* SignUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPage.swift; sourceTree = "<group>"; };
 		2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2DCEDB212690F5EE00EF58EA /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		2DCEDB23269115DF00EF58EA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		2DCEDB252692347600EF58EA /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		2DCEDB2726923A2400EF58EA /* RestoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoBar.swift; sourceTree = "<group>"; };
+		2DCEDB2926923AC900EF58EA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2DCEDB2F269249F700EF58EA /* CocktailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailService.swift; sourceTree = "<group>"; };
 		2DE42212268C266300843F19 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		2DE42215268C4AB700843F19 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCEDB2D269249D500EF58EA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +156,18 @@
 		2D67C338268BA8B000EEAC5A /* data */ = {
 			isa = PBXGroup;
 			children = (
+				2DCEDB2E269249E100EF58EA /* network */,
 				2DE4221A268D78CB00843F19 /* local */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		2DCEDB2E269249E100EF58EA /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2DCEDB2F269249F700EF58EA /* CocktailService.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 		2DE42214268C4A9D00843F19 /* model */ = {
@@ -154,6 +175,9 @@
 			children = (
 				2D67C339268BA8ED00EEAC5A /* Usuario.swift */,
 				2DE42215268C4AB700843F19 /* Cocktail.swift */,
+				2DCEDB252692347600EF58EA /* Ingredient.swift */,
+				2DCEDB2726923A2400EF58EA /* RestoBar.swift */,
+				2DCEDB2926923AC900EF58EA /* Product.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -163,6 +187,7 @@
 			children = (
 				2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */,
 				2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */,
+				2DCEDB23269115DF00EF58EA /* MainViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -202,6 +227,9 @@
 			dependencies = (
 			);
 			name = cocktelito;
+			packageProductDependencies = (
+				2DCEDB2C269249D500EF58EA /* Alamofire */,
+			);
 			productName = cocktelito;
 			productReference = 2D67C3172676BBB200EEAC5A /* cocktelito.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 2D67C30E2676BBB200EEAC5A;
+			packageReferences = (
+				2DCEDB2B269249D500EF58EA /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2D67C3182676BBB200EEAC5A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,20 +287,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCEDB2826923A2400EF58EA /* RestoBar.swift in Sources */,
 				2DE42221268D7CB200843F19 /* UsuarioLocalService.swift in Sources */,
 				2D67C3272676BBB300EEAC5A /* cocktelito.xcdatamodeld in Sources */,
+				2DCEDB262692347600EF58EA /* Ingredient.swift in Sources */,
 				2D67C3242676BBB300EEAC5A /* Persistence.swift in Sources */,
 				2DE42213268C266300843F19 /* ViewUtils.swift in Sources */,
 				2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */,
 				2D67C33A268BA8ED00EEAC5A /* Usuario.swift in Sources */,
 				2D67C331268AD9BA00EEAC5A /* SplashPage.swift in Sources */,
 				2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */,
+				2DCEDB24269115DF00EF58EA /* MainViewModel.swift in Sources */,
+				2DCEDB30269249F700EF58EA /* CocktailService.swift in Sources */,
 				2DCEDB2026901AC000EF58EA /* LoginViewModel.swift in Sources */,
 				2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */,
 				2DE4221E268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */,
 				2DCEDB222690F5EE00EF58EA /* MainPage.swift in Sources */,
 				2DE4221D268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift in Sources */,
 				2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */,
+				2DCEDB2A26923AC900EF58EA /* Product.swift in Sources */,
 				2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */,
 				2D67C334268ADB7C00EEAC5A /* Constants.swift in Sources */,
 			);
@@ -460,6 +496,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2DCEDB2B269249D500EF58EA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2DCEDB2C269249D500EF58EA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DCEDB2B269249D500EF58EA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2D67C3252676BBB300EEAC5A /* cocktelito.xcdatamodeld */ = {

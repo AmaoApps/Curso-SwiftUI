@@ -11,16 +11,33 @@ struct MainPage: View {
     
     @State var usuarioLoged: Usuario
     
+    init(usuarioLoged: Usuario) {
+        //Configuracion de la fuente del Navigation Bar Title
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: ConstantsCocktelito.font_berkshire, size: CGFloat(32))!]
+        
+        print("Usuario Logeado -> " + usuarioLoged.name)
+        
+        let service = CocktailService()
+        service.getRandomCocktail()
+        self.usuarioLoged = usuarioLoged
+        
+    }
+    
     var body: some View {
         TabView {
-            ScrollView{
-                VStack{
-                    HeaderCocktailRandom()
-                    Spacer()
+            NavigationView{
+                ScrollView{
+                    VStack{
+                        HeaderCocktailRandom()
+                        Text("Usuario Loged .~ " + usuarioLoged.name)
+                        Spacer()
+                    }
                 }
+                .navigationBarTitle(Text(ConstantsCocktelito.string_app_name))
+                .navigationBarTitleDisplayMode(.inline)
             }.tabItem {
-                    Label("Inicio", systemImage: "house.fill")
-                }
+                Label("Inicio", systemImage: "house.fill")
+            }
             Text("Search Screen")
                 .tabItem {
                     Label("Busqueda", systemImage: "magnifyingglass.circle.fill")
@@ -42,7 +59,6 @@ struct HeaderCocktailRandom : View {
 
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        let usuario : Usuario = Usuario(mock: true)
-        MainPage(usuarioLoged: usuario)
+        MainPage(usuarioLoged: Usuario(mock: true))
     }
 }

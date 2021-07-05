@@ -21,6 +21,7 @@ class LoginViewModel : ObservableObject {
     
     @Published private(set) var state = State.idle
     @Published var isLogin = false
+    @Published var usuarioVerificado = Usuario()
     
     private var context : NSManagedObjectContext
     
@@ -34,6 +35,7 @@ class LoginViewModel : ObservableObject {
             self.state = State.failed("Email y/o contrasenia incorrectos")
         } else {
             self.state = State.loaded(usuarioValido!)
+            self.usuarioVerificado = usuarioValido!
             self.isLogin = true
         }
     }
