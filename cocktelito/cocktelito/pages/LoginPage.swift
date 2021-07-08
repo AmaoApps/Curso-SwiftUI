@@ -65,7 +65,7 @@ struct FormLogin: View {
             Divider()
             TextField(placeHolder, text: $txtForm)
                 .frame(maxWidth: .infinity)
-        }.frame(width: .infinity, height: 50, alignment: .center)
+        }.frame(height: 50, alignment: .center)
         .overlay(
             RoundedRectangle(cornerRadius: 10.0).stroke())
     }
@@ -83,7 +83,7 @@ struct FormLoginPass: View {
             Divider()
             SecureField(placeHolder, text: $pass)
                 .frame(maxWidth: .infinity)
-        }.frame(width: .infinity, height: 50, alignment: .center)
+        }.frame(height: 50)
         .overlay(
             RoundedRectangle(cornerRadius: 10.0).stroke())
     }

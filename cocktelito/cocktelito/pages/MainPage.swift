@@ -6,21 +6,22 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MainPage: View {
     
     @State var usuarioLoged: Usuario
+    @ObservedObject var viewModel : MainViewModel
     
     init(usuarioLoged: Usuario) {
         //Configuracion de la fuente del Navigation Bar Title
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: ConstantsCocktelito.font_berkshire, size: CGFloat(32))!]
         
-        print("Usuario Logeado -> " + usuarioLoged.name)
+        viewModel = MainViewModel(context: PersistenceController.shared.container.viewContext)
         
-        let service = CocktailService()
-        service.getRandomCocktail()
+        //print("Usuario Logeado -> " + usuarioLoged.name)
         self.usuarioLoged = usuarioLoged
-        
+        self.viewModel.getRandomCocktail()
     }
     
     var body: some View {
@@ -28,7 +29,7 @@ struct MainPage: View {
             NavigationView{
                 ScrollView{
                     VStack{
-                        HeaderCocktailRandom()
+                        HeaderCocktailRandom(viewModel: viewModel)
                         Text("Usuario Loged .~ " + usuarioLoged.name)
                         Spacer()
                     }
@@ -52,8 +53,25 @@ struct MainPage: View {
 
 struct HeaderCocktailRandom : View {
     
+    @ObservedObject var viewModel : MainViewModel
+    @State private var spinLoading = false
+    
     var body: some View {
-            Text("Cocktail ramdon Module")
+                
+        VStack{
+            Text("Tu cocktail del día")
+            if viewModel.daylyRandomCocktail.id != "" {
+                Text("Actualizado => " + (viewModel.daylyRandomCocktail.name ?? "Unknow"))
+            } else {
+                Text("Aun vacio")
+                Circle()
+                    .trim(from: 1/4, to: 1)
+                    .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
+                    .foregroundColor(Color(ConstantsCocktelito.color_background_splash))
+            }
+        }
+        
+        
     }
 }
 

@@ -7,37 +7,41 @@
 
 import Foundation
 
-struct Cocktail : Identifiable {
-    var id: Int
-    var name: String
-    var tags: String
-    var category: String
-    var instructions: String
-    var pathImage: String
-    var ingredients: [Ingredient]
-        
+struct Cocktail : Identifiable, Codable {
     
-    init(mock: Bool = false) {
-        if mock {
-            id = 1
-            name = "Pink Moon"
-            tags = "Fresh, Summer, colourful, Nature"
-            category = "Cocktail"
-            instructions = "Slowly shake in a shaker with Ice, strain into a square whiskey glass."
-            pathImage = "https://www.thecocktaildb.com/images/media/drink/lnjoc81619696191.jpg"
-            ingredients = [
-                Ingredient(name: "Gin", measure: "1 shot"),
-                Ingredient(name: "Coconout Liqueur", measure: "1 shot"),
-                Ingredient(name: "ElderFlower cordial", measure: "25 ml")
-                ]
-        } else {
-            id = 0
-            name = ""
-            tags = ""
-            category = ""
-            instructions = ""
-            pathImage = ""
-            ingredients = []
-        }
+    enum CodingKeys: String, CodingKey {
+        case id = "idDrink"
+        case name = "strDrink"
+        case tags = "strTags"
+        case category = "strCategory"
+        case instructions = "strInstructions"
+        case pathImage = "strDrinkThumb"
+        case ingredient1 = "strIngredient1"
+        case ingredient2 = "strIngredient2"
+        case ingredient3 = "strIngredient3"
+        case ingredient4 = "strIngredient4"
+        case ingredient5 = "strIngredient5"
+        case measure1 = "strMeasure1"
+        case measure2 = "strMeasure2"
+        case measure3 = "strMeasure3"
+        case measure4 = "strMeasure4"
+        case measure5 = "strMeasure5"
     }
+    
+    var id: String? = ""
+    var name: String? = ""
+    var tags: String? = ""
+    var category: String? = ""
+    var instructions: String? = ""
+    var pathImage: String? = ""
+    var ingredient1: String? = ""
+    var ingredient2: String? = ""
+    var ingredient3: String? = ""
+    var ingredient4: String? = ""
+    var ingredient5: String? = ""
+    var measure1: String? = ""
+    var measure2: String? = ""
+    var measure3: String? = ""
+    var measure4: String? = ""
+    var measure5: String? = ""
 }

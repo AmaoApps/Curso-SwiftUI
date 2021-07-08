@@ -6,12 +6,20 @@
 //
 
 import Foundation
+import Combine
 import CoreData
 
 class MainViewModel : ObservableObject {
     
     @Published var daylyRandomCocktail = Cocktail()
-    @Published var listRestoBars = []
+    @Published var listRestoBars: [RestoBar] = []
+    @Published var showError: Bool = false
+    
+    private(set) var error: Error? {
+        didSet {
+            showError = error != nil
+        }
+    }
     
     private var context : NSManagedObjectContext
     
@@ -20,9 +28,19 @@ class MainViewModel : ObservableObject {
     }
     
     func getRandomCocktail(){
+        let service = CocktailService()
+        //service.getRandomCocktail()
         
-        
-        
+        service.getRandomCocktail{ [weak self] response in
+            switch response {
+            case .success(let cocktailRandom):
+                if cocktailRandom.count > 0 {
+                    self?.daylyRandomCocktail = cocktailRandom[0]
+                }
+            case .failure(let error):
+                self?.error = error
+            }
+        }
     }
     
     func getListRestoBars(){
