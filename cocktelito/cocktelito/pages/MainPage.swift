@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import URLImage
 
 struct MainPage: View {
     
@@ -30,8 +31,8 @@ struct MainPage: View {
                 ScrollView{
                     VStack{
                         HeaderCocktailRandom(viewModel: viewModel)
-                        Text("Usuario Loged .~ " + usuarioLoged.name)
-                        Spacer()
+                        //Text("Usuario Loged .~ " + usuarioLoged.name)
+                        //RestoBarList()
                     }
                 }
                 .navigationBarTitle(Text(ConstantsCocktelito.string_app_name))
@@ -59,19 +60,52 @@ struct HeaderCocktailRandom : View {
     var body: some View {
                 
         VStack{
-            Text("Tu cocktail del día")
+            HStack{
+                Text("Tu cocktail del día").font(.title3).bold().padding()
+                Spacer()
+            }
             if viewModel.daylyRandomCocktail.id != "" {
-                Text("Actualizado => " + (viewModel.daylyRandomCocktail.name ?? "Unknow"))
+                HStack{
+                    let url : URL = URL(string: viewModel.daylyRandomCocktail.pathImage!)!
+                        URLImage(url){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 150, height: 150)
+                                .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                .padding(.leading)
+                                .padding(.trailing)
+                        }
+                    VStack(alignment: .leading){
+                        Text(viewModel.daylyRandomCocktail.name!).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
+                        Text(viewModel.daylyRandomCocktail.instructions ?? "No tiene instruncciones").multilineTextAlignment(.leading)
+                    }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                }
             } else {
-                Text("Aun vacio")
-                Circle()
-                    .trim(from: 1/4, to: 1)
-                    .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color(ConstantsCocktelito.color_background_splash))
+                LoadingProgress(spinLoading: $spinLoading)
             }
         }
         
         
+    }
+}
+
+struct LoadingProgress: View {
+    
+    @Binding var spinLoading : Bool
+    
+    var body: some View {
+        
+            Circle()
+                .trim(from: 1/4, to: 1)
+                .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
+                .foregroundColor(Color(ConstantsCocktelito.color_accent))
+                .frame(width: 40, height: 40)
+                .rotationEffect(.degrees(spinLoading ? 360 : 0))
+                .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+                .onAppear(){
+                    self.spinLoading.toggle()
+                }
     }
 }
 

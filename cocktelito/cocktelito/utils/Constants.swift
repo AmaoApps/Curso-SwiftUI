@@ -31,6 +31,7 @@ struct ConstantsCocktelito {
     
     //Colores
     static let color_background_splash = "background_splash"
+    static let color_accent = "AccentColor"
     
     //Fonts
     static let font_berkshire = "BerkshireSwash-Regular"
