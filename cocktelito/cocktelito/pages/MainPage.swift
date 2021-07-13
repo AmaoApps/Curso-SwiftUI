@@ -16,13 +16,13 @@ struct MainPage: View {
     
     init(usuarioLoged: Usuario) {
         //Configuracion de la fuente del Navigation Bar Title
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: ConstantsCocktelito.font_berkshire, size: CGFloat(32))!]
-        
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: ConstantsCocktelito.font_berkshire, size: CGFloat(32))!, .foregroundColor: UIColor(Color(ConstantsCocktelito.color_accent))]
         viewModel = MainViewModel(context: PersistenceController.shared.container.viewContext)
         
         //print("Usuario Logeado -> " + usuarioLoged.name)
         self.usuarioLoged = usuarioLoged
         self.viewModel.getRandomCocktail()
+        self.viewModel.getListRestoBars()
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct MainPage: View {
                     VStack{
                         HeaderCocktailRandom(viewModel: viewModel)
                         //Text("Usuario Loged .~ " + usuarioLoged.name)
-                        //RestoBarList()
+                        RestoBarList(viewModel: viewModel)
                     }
                 }
                 .navigationBarTitle(Text(ConstantsCocktelito.string_app_name))
@@ -61,7 +61,7 @@ struct HeaderCocktailRandom : View {
                 
         VStack{
             HStack{
-                Text("Tu cocktail del día").font(.title3).bold().padding()
+                Text(ConstantsCocktelito.string_main_page_title_random).font(.title3).bold().padding(.top).padding(.leading)
                 Spacer()
             }
             if viewModel.daylyRandomCocktail.id != "" {
@@ -79,7 +79,7 @@ struct HeaderCocktailRandom : View {
                     VStack(alignment: .leading){
                         Text(viewModel.daylyRandomCocktail.name!).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
                         Text(viewModel.daylyRandomCocktail.instructions ?? "No tiene instruncciones").multilineTextAlignment(.leading)
-                    }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
                 }
             } else {
                 LoadingProgress(spinLoading: $spinLoading)
@@ -106,6 +106,45 @@ struct LoadingProgress: View {
                 .onAppear(){
                     self.spinLoading.toggle()
                 }
+    }
+}
+
+struct RestoBarList : View {
+    
+    @ObservedObject var viewModel : MainViewModel
+    
+    var body: some View{
+        VStack{
+            HStack{
+                Text(ConstantsCocktelito.string_main_page_bars).font(.title3).bold().padding(.top).padding(.leading)
+                Spacer()
+            }
+            
+            ForEach(viewModel.listRestoBars){ restoBar in
+                ZStack{
+                    let url : URL = URL(string: restoBar.pathImage)!
+                    URLImage(url){ image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .overlay(Text(restoBar.name).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
+                                        .foregroundColor(.white)
+                                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 0)),
+                                     alignment: .bottomLeading)
+                    }
+                }
+                HStack{
+                    Label("\(restoBar.likes)", systemImage:"suit.heart.fill")
+                    Spacer()
+                    Label("\(restoBar.schedule)", systemImage:"timer")
+                }
+                .padding(EdgeInsets(top:0, leading:16, bottom:0, trailing:16))
+            }
+        }
     }
 }
 

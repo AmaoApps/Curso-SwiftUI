@@ -23,6 +23,10 @@ struct ConstantsCocktelito {
     static let string_signup_form_pass = "Ingresa tu contrasenia"
     static let string_signup_form_repass = "Ingresa nuevamente tu contrasenia"
     static let string_signup_form_signup = "Registrarse"
+    
+    //Main Page String
+    static let string_main_page_title_random = "Cocktail del dia"
+    static let string_main_page_bars = "Encuentra los mejores cockteles en:"
 
     
     //Imagenes

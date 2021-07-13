@@ -27,6 +27,8 @@
 		2DCEDB2D269249D500EF58EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCEDB2C269249D500EF58EA /* Alamofire */; };
 		2DCEDB30269249F700EF58EA /* CocktailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB2F269249F700EF58EA /* CocktailService.swift */; };
 		2DCEDB332692BB6400EF58EA /* CocktailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEDB322692BB6400EF58EA /* CocktailResponse.swift */; };
+		2DCEDB362696A31C00EF58EA /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCEDB352696A31C00EF58EA /* URLImageStore */; };
+		2DCEDB382696A31C00EF58EA /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCEDB372696A31C00EF58EA /* URLImage */; };
 		2DE42213268C266300843F19 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42212268C266300843F19 /* ViewUtils.swift */; };
 		2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42215268C4AB700843F19 /* Cocktail.swift */; };
 		2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */; };
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCEDB362696A31C00EF58EA /* URLImageStore in Frameworks */,
+				2DCEDB382696A31C00EF58EA /* URLImage in Frameworks */,
 				2DCEDB2D269249D500EF58EA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +244,8 @@
 			name = cocktelito;
 			packageProductDependencies = (
 				2DCEDB2C269249D500EF58EA /* Alamofire */,
+				2DCEDB352696A31C00EF58EA /* URLImageStore */,
+				2DCEDB372696A31C00EF58EA /* URLImage */,
 			);
 			productName = cocktelito;
 			productReference = 2D67C3172676BBB200EEAC5A /* cocktelito.app */;
@@ -270,6 +276,7 @@
 			mainGroup = 2D67C30E2676BBB200EEAC5A;
 			packageReferences = (
 				2DCEDB2B269249D500EF58EA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2DCEDB342696A31C00EF58EA /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 2D67C3182676BBB200EEAC5A /* Products */;
 			projectDirPath = "";
@@ -518,6 +525,14 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		2DCEDB342696A31C00EF58EA /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -525,6 +540,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2DCEDB2B269249D500EF58EA /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		2DCEDB352696A31C00EF58EA /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DCEDB342696A31C00EF58EA /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+		2DCEDB372696A31C00EF58EA /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DCEDB342696A31C00EF58EA /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 

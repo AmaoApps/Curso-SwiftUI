@@ -13,28 +13,23 @@ struct SplashPage: View {
     @State var endSplash = false
     
     var body: some View {
-        if(endSplash) {
-            LoginPageView()
-        } else {
-            ZStack{
-                Color(ConstantsCocktelito.color_background_splash)
-                Image(ConstantsCocktelito.icon_splash_large)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: animate ? .fill : .fit)
-                    .frame(width: animate ? nil : CGFloat(85.0), height: animate ? nil : CGFloat(85.0))
+            ZStack {
                 
-                // Scaling View
-                    .scaleEffect(animate ? 3 : 1)
-                // Setting width to avoid over size
-                    .frame(width: UIScreen.main.bounds.width)
-                
+                LoginPageView()
+                    .ignoresSafeArea(.all, edges: .top)
+                    .background(Color.black.opacity(0.6).ignoresSafeArea(.all, edges: .all))
+                ZStack{
+                    Color(ConstantsCocktelito.color_background_splash)
+                    Image(ConstantsCocktelito.icon_splash_large)
+                        .resizable()
+                        .frame(width:  CGFloat(85.0), height:  CGFloat(85.0))
+                    
+                }
+                .ignoresSafeArea(.all, edges: .all)
+                .onAppear(perform: animationSplash)
+                // Hiding view after finished
+                .opacity(endSplash ? 0 : 1)
             }
-            .ignoresSafeArea(.all, edges: .all)
-            .onAppear(perform: animationSplash)
-            // Hiding view after finished
-            .opacity(endSplash ? 0 : 1)
-        }
     }
     
     

@@ -44,7 +44,7 @@ class MainViewModel : ObservableObject {
     }
     
     func getListRestoBars(){
-        let restoBar1 = RestoBar(id: 1, name: "La Taberna Limenia", likes: 546, schedule: "13:00 - 01:00", pathImage: "https://res.cloudinary.com/tf-lab/image/upload/w_600,h_337,c_fill,g_auto:subject,q_auto,f_auto/restaurant/0fa7206f-0da9-4fd7-991a-c30fe8bdef97/24c333ee-5d64-407f-a79c-1a02d7d2a265.jpg", address: "Av. Miraflores 512, Altura Parke Kennedy, espaldas del Hotel Sheraton", menu:
+        let restoBar1 = RestoBar(id: 1, name: "La Taberna Limenia", likes: 546, schedule: "13:00 - 01:00", pathImage: "https://enlima.pe/sites/default/files/bazar.jpg", address: "Av. Miraflores 512, Altura Parke Kennedy, espaldas del Hotel Sheraton", menu:
                                     [Product(name: "Gin Tonic", details: "Bebida Especialidad de la casa", price: 22.0),
                                      Product(name: "Blue Island", details: "Bebida con Vodka, surtido con un limon", price: 24.0),
                                      Product(name: "Macchu Picchu", details: "Bebida de todos los colores y sabores", price: 24.0)
@@ -61,6 +61,7 @@ class MainViewModel : ObservableObject {
                                     ])
         let listResto = [restoBar1, restoBar2, restoBar3]
         self.listRestoBars = listResto
+        print("Cantidad de elementos restobats \(self.listRestoBars.count)")
     }
     
     private func autenticarUsuario(email: String, pass: String) -> Usuario? {
