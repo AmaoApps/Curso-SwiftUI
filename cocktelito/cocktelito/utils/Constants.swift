@@ -28,6 +28,9 @@ struct ConstantsCocktelito {
     static let string_main_page_title_random = "Cocktail del dia"
     static let string_main_page_bars = "Encuentra los mejores cockteles en:"
 
+    //Detail Page String
+    static let string_detail_ingredients = "Ingredientes"
+    static let string_detail_instructions = "Instrucciones"
     
     //Imagenes
     static let icon_splash_small = "splashicon_85"

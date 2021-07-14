@@ -66,20 +66,22 @@ struct HeaderCocktailRandom : View {
             }
             if viewModel.daylyRandomCocktail.id != "" {
                 HStack{
-                    let url : URL = URL(string: viewModel.daylyRandomCocktail.pathImage!)!
-                        URLImage(url){ image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 150, height: 150)
-                                .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                                .padding(.leading)
-                                .padding(.trailing)
-                        }
-                    VStack(alignment: .leading){
-                        Text(viewModel.daylyRandomCocktail.name!).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
-                        Text(viewModel.daylyRandomCocktail.instructions ?? "No tiene instruncciones").multilineTextAlignment(.leading)
-                    }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    NavigationLink(destination: DetailCocktailPage(cocktail: viewModel.daylyRandomCocktail)){
+                        let url : URL = URL(string: viewModel.daylyRandomCocktail.pathImage!)!
+                            URLImage(url){ image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 150, height: 150)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                            }
+                        VStack(alignment: .leading){
+                            Text(viewModel.daylyRandomCocktail.name!).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
+                            Text(viewModel.daylyRandomCocktail.instructions ?? "No tiene instruncciones").multilineTextAlignment(.leading)
+                        }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 10)).lineLimit(5)
+                    }.buttonStyle(PlainButtonStyle())
                 }
             } else {
                 LoadingProgress(spinLoading: $spinLoading)
