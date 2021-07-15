@@ -123,28 +123,32 @@ struct RestoBarList : View {
             }
             
             ForEach(viewModel.listRestoBars){ restoBar in
-                ZStack{
-                    let url : URL = URL(string: restoBar.pathImage)!
-                    URLImage(url){ image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 150)
-                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                            .padding(.leading)
-                            .padding(.trailing)
-                            .overlay(Text(restoBar.name).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
-                                        .foregroundColor(.white)
-                                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 0)),
-                                     alignment: .bottomLeading)
+                NavigationLink(destination: DetailRestoBarPage(restobar: restoBar)){
+                    VStack{
+                        ZStack{
+                            let url : URL = URL(string: restoBar.pathImage)!
+                            URLImage(url){ image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 150)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                                    .overlay(Text(restoBar.name).font(.custom(ConstantsCocktelito.font_berkshire, size: CGFloat(24)))
+                                                .foregroundColor(.white)
+                                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 0)),
+                                             alignment: .bottomLeading)
+                            }
+                        }
+                        HStack{
+                            Label("\(restoBar.likes)", systemImage:"suit.heart.fill")
+                            Spacer()
+                            Label("\(restoBar.schedule)", systemImage:"timer")
+                        }
+                        .padding(EdgeInsets(top:0, leading:16, bottom:0, trailing:16))
                     }
                 }
-                HStack{
-                    Label("\(restoBar.likes)", systemImage:"suit.heart.fill")
-                    Spacer()
-                    Label("\(restoBar.schedule)", systemImage:"timer")
-                }
-                .padding(EdgeInsets(top:0, leading:16, bottom:0, trailing:16))
             }
         }
     }

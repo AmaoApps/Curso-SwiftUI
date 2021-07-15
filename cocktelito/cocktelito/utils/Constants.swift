@@ -31,6 +31,8 @@ struct ConstantsCocktelito {
     //Detail Page String
     static let string_detail_ingredients = "Ingredientes"
     static let string_detail_instructions = "Instrucciones"
+    static let string_detail_address = "Estamos ubicados en:"
+    static let string_detail_menu = "Conoce nuestra carta:"
     
     //Imagenes
     static let icon_splash_small = "splashicon_85"
