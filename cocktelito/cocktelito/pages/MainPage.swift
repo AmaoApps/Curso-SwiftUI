@@ -44,7 +44,7 @@ struct MainPage: View {
                 .tabItem {
                     Label("Busqueda", systemImage: "magnifyingglass.circle.fill")
                 }
-            Text("Profile Screen")
+            ProfilePage(usuarioLogged: usuarioLoged)
                 .tabItem {
                     Label("Perfil", systemImage: "person.crop.circle")
                 }

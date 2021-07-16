@@ -6,18 +6,29 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SplashPage: View {
     
     @State var animate = false
     @State var endSplash = false
     
+    @ObservedObject var viewModel : SplashViewModel
+    
+    init() {
+        viewModel = SplashViewModel(context: PersistenceController.shared.container.viewContext)
+    }
+    
     var body: some View {
             ZStack {
-                
-                LoginPageView()
-                    .ignoresSafeArea(.all, edges: .top)
-                    .background(Color.black.opacity(0.6).ignoresSafeArea(.all, edges: .all))
+                if(viewModel.usuarioLogeado != nil){
+                    MainPage(usuarioLoged: viewModel.usuarioLogeado!)
+                        .ignoresSafeArea(.all)
+                } else {
+                    LoginPageView()
+                        .ignoresSafeArea(.all)
+                        .background(Color.black.opacity(0.6).ignoresSafeArea(.all))
+                }
                 ZStack{
                     Color(ConstantsCocktelito.color_background_splash)
                     Image(ConstantsCocktelito.icon_splash_large)
@@ -25,7 +36,7 @@ struct SplashPage: View {
                         .frame(width:  CGFloat(85.0), height:  CGFloat(85.0))
                     
                 }
-                .ignoresSafeArea(.all, edges: .all)
+                .ignoresSafeArea(.all)
                 .onAppear(perform: animationSplash)
                 // Hiding view after finished
                 .opacity(endSplash ? 0 : 1)
@@ -34,12 +45,13 @@ struct SplashPage: View {
     
     
     func animationSplash(){
+        viewModel.validarUsuarioLogeado()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            withAnimation(Animation.easeOut(duration: 0.25)){
+            withAnimation(Animation.easeOut(duration: 0.45)){
                 animate.toggle()
             }
             
-            withAnimation(Animation.linear(duration: 0.15)){
+            withAnimation(Animation.linear(duration: 0.25)){
                 endSplash.toggle()
             }
         }

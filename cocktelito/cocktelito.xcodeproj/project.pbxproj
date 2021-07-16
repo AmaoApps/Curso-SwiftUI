@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2D4F28FB269D3D4E00EA94D2 /* DetailCocktailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F28FA269D3D4E00EA94D2 /* DetailCocktailPage.swift */; };
 		2D4F28FD269E8E1A00EA94D2 /* DetailRestoBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F28FC269E8E1A00EA94D2 /* DetailRestoBarPage.swift */; };
+		2D4F28FF269FBEE600EA94D2 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F28FE269FBEE600EA94D2 /* ProfilePage.swift */; };
+		2D4F2901269FBF0D00EA94D2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F2900269FBF0D00EA94D2 /* ProfileViewModel.swift */; };
+		2D4F2903269FCA6200EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F2902269FCA6200EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift */; };
+		2D4F2905269FD49100EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F2904269FD49100EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift */; };
+		2D4F2907269FDA0D00EA94D2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F2906269FDA0D00EA94D2 /* SplashViewModel.swift */; };
 		2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C31A2676BBB200EEAC5A /* cocktelitoApp.swift */; };
 		2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67C31C2676BBB200EEAC5A /* LoginPage.swift */; };
 		2D67C31F2676BBB300EEAC5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D67C31E2676BBB300EEAC5A /* Assets.xcassets */; };
@@ -35,13 +40,17 @@
 		2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42215268C4AB700843F19 /* Cocktail.swift */; };
 		2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */; };
 		2DE4221D268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE4221B268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift */; };
-		2DE4221E268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE4221C268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift */; };
 		2DE42221268D7CB200843F19 /* UsuarioLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE42220268D7CB200843F19 /* UsuarioLocalService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D4F28FA269D3D4E00EA94D2 /* DetailCocktailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCocktailPage.swift; sourceTree = "<group>"; };
 		2D4F28FC269E8E1A00EA94D2 /* DetailRestoBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRestoBarPage.swift; sourceTree = "<group>"; };
+		2D4F28FE269FBEE600EA94D2 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		2D4F2900269FBF0D00EA94D2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2D4F2902269FCA6200EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsuarioDBDTO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2D4F2904269FD49100EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsuarioDBDTO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2D4F2906269FDA0D00EA94D2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		2D67C3172676BBB200EEAC5A /* cocktelito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocktelito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D67C31A2676BBB200EEAC5A /* cocktelitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocktelitoApp.swift; sourceTree = "<group>"; };
 		2D67C31C2676BBB200EEAC5A /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -67,7 +76,6 @@
 		2DE42215268C4AB700843F19 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2DE4221B268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsuarioDBDTO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2DE4221C268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsuarioDBDTO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2DE42220268D7CB200843F19 /* UsuarioLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioLocalService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +152,7 @@
 				2DCEDB212690F5EE00EF58EA /* MainPage.swift */,
 				2D4F28FA269D3D4E00EA94D2 /* DetailCocktailPage.swift */,
 				2D4F28FC269E8E1A00EA94D2 /* DetailRestoBarPage.swift */,
+				2D4F28FE269FBEE600EA94D2 /* ProfilePage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -209,6 +218,8 @@
 				2DE42218268C4CCA00843F19 /* SignUpViewModel.swift */,
 				2DCEDB1F26901AC000EF58EA /* LoginViewModel.swift */,
 				2DCEDB23269115DF00EF58EA /* MainViewModel.swift */,
+				2D4F2900269FBF0D00EA94D2 /* ProfileViewModel.swift */,
+				2D4F2906269FDA0D00EA94D2 /* SplashViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -226,8 +237,9 @@
 		2DE4221F268D7C7A00843F19 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				2D4F2902269FCA6200EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift */,
+				2D4F2904269FD49100EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift */,
 				2DE4221B268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift */,
-				2DE4221C268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -272,7 +284,7 @@
 				};
 			};
 			buildConfigurationList = 2D67C3122676BBB200EEAC5A /* Build configuration list for PBXProject "cocktelito" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -314,6 +326,7 @@
 				2DCEDB2826923A2400EF58EA /* RestoBar.swift in Sources */,
 				2DE42221268D7CB200843F19 /* UsuarioLocalService.swift in Sources */,
 				2D67C3272676BBB300EEAC5A /* cocktelito.xcdatamodeld in Sources */,
+				2D4F2907269FDA0D00EA94D2 /* SplashViewModel.swift in Sources */,
 				2DCEDB262692347600EF58EA /* Ingredient.swift in Sources */,
 				2D67C3242676BBB300EEAC5A /* Persistence.swift in Sources */,
 				2D4F28FD269E8E1A00EA94D2 /* DetailRestoBarPage.swift in Sources */,
@@ -321,18 +334,21 @@
 				2DE42216268C4AB700843F19 /* Cocktail.swift in Sources */,
 				2D67C33A268BA8ED00EEAC5A /* Usuario.swift in Sources */,
 				2D67C331268AD9BA00EEAC5A /* SplashPage.swift in Sources */,
+				2D4F2901269FBF0D00EA94D2 /* ProfileViewModel.swift in Sources */,
 				2DCEDB332692BB6400EF58EA /* CocktailResponse.swift in Sources */,
 				2D67C31D2676BBB200EEAC5A /* LoginPage.swift in Sources */,
 				2DCEDB24269115DF00EF58EA /* MainViewModel.swift in Sources */,
 				2DCEDB30269249F700EF58EA /* CocktailService.swift in Sources */,
 				2DCEDB2026901AC000EF58EA /* LoginViewModel.swift in Sources */,
 				2D67C31B2676BBB200EEAC5A /* cocktelitoApp.swift in Sources */,
-				2DE4221E268D7C6400843F19 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */,
 				2DCEDB222690F5EE00EF58EA /* MainPage.swift in Sources */,
 				2DE4221D268D7C6400843F19 /* UsuarioDBDTO+CoreDataClass.swift in Sources */,
 				2D67C33C268C101500EEAC5A /* SignUpPage.swift in Sources */,
 				2DCEDB2A26923AC900EF58EA /* Product.swift in Sources */,
 				2DE42219268C4CCA00843F19 /* SignUpViewModel.swift in Sources */,
+				2D4F2903269FCA6200EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */,
+				2D4F2905269FD49100EA94D2 /* UsuarioDBDTO+CoreDataProperties.swift in Sources */,
+				2D4F28FF269FBEE600EA94D2 /* ProfilePage.swift in Sources */,
 				2D4F28FB269D3D4E00EA94D2 /* DetailCocktailPage.swift in Sources */,
 				2D67C334268ADB7C00EEAC5A /* Constants.swift in Sources */,
 			);

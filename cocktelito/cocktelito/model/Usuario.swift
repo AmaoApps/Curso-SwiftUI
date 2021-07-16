@@ -12,6 +12,7 @@ struct Usuario : Identifiable {
     var name: String
     var email: String
     var password: String
+    var isLogged: Bool
     
     var fullData: String {
         "\(name) - \(email)"
@@ -23,11 +24,13 @@ struct Usuario : Identifiable {
             name = "Ulises Amao"
             email = "amao.apps@gmail.com"
             password = "pass123"
+            isLogged = false
         } else {
             id = 0
             name = ""
             email = ""
             password = ""
+            isLogged = false
         }
     }
     

@@ -47,6 +47,7 @@ class SignUpViewModel: ObservableObject {
             newUsuario.name = usuario.name
             newUsuario.email = usuario.email
             newUsuario.password = usuario.password
+            newUsuario.isLogged = false
             registrarUsuario(usuario: newUsuario)
             print("Se registro al usuario")
             self.state = State.loaded(newUsuario)

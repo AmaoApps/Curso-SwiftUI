@@ -13,8 +13,8 @@ struct cocktelitoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginPageView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            SplashPage()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext).edgesIgnoringSafeArea(.all)
         }
     }
 }

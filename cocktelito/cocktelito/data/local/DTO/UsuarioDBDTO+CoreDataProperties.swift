@@ -2,7 +2,7 @@
 //  UsuarioDBDTO+CoreDataProperties.swift
 //  cocktelito
 //
-//  Created by Paku on 30/06/21.
+//  Created by Paku on 14/07/21.
 //
 //
 
@@ -16,10 +16,11 @@ extension UsuarioDBDTO {
         return NSFetchRequest<UsuarioDBDTO>(entityName: "UsuarioDBDTO")
     }
 
+    @NSManaged public var email: String?
     @NSManaged public var id: Int32
     @NSManaged public var name: String?
-    @NSManaged public var email: String?
     @NSManaged public var password: String?
+    @NSManaged public var isLogged: Bool
 
 }
 

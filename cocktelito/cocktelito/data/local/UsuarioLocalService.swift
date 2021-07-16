@@ -76,8 +76,35 @@ struct UsuarioLocalService {
         usuarioAuth.email = usuarioEncontrado.email ?? ""
         usuarioAuth.password = usuarioEncontrado.password ?? ""
         usuarioAuth.name = usuarioEncontrado.name ?? ""
+        usuarioAuth.isLogged = true
+        updateLogged(email: email, logged: true)
         return usuarioAuth
         
+    }
+    
+    func closeSession(email: String){
+        updateLogged(email: email, logged: false)
+    }
+    
+    func updateLogged(email: String, logged : Bool) {
+        let userFinded = getUserByEmail(email: email)
+        context.performAndWait {
+            userFinded?.isLogged = logged
+            try? context.save()
+        }
+    }
+    
+    func getUserLogged() -> Usuario? {
+        guard let usuarioEncontrado =  getUserLoggedDB() else {
+            return nil
+        }
+        var usuarioAuth = Usuario()
+        usuarioAuth.id = Int(usuarioEncontrado.id)
+        usuarioAuth.email = usuarioEncontrado.email ?? ""
+        usuarioAuth.password = usuarioEncontrado.password ?? ""
+        usuarioAuth.name = usuarioEncontrado.name ?? ""
+        usuarioAuth.isLogged = usuarioEncontrado.isLogged
+        return usuarioAuth
     }
     
     private func getUserByEmail(email: String) -> UsuarioDBDTO? {
@@ -126,6 +153,23 @@ struct UsuarioLocalService {
         }
     }
     
+    
+    private func getUserLoggedDB()-> UsuarioDBDTO?{
+        let request = NSFetchRequest<UsuarioDBDTO>(entityName: "UsuarioDBDTO")
+        request.predicate = NSPredicate(format: "isLogged = %d", true)
+                
+        do {
+            let result = try context.fetch(request)
+            guard let usuario = result.first else {
+                return nil
+            }
+            return usuario
+        } catch (let ex) {
+            print(ex)
+            return nil
+        }
+    }
+    
     private func getUserByEmailAndPassword(email: String, pass: String)-> UsuarioDBDTO?{
         let request = NSFetchRequest<UsuarioDBDTO>(entityName: "UsuarioDBDTO")
         let predicateEmail = NSPredicate(format: "email == %@", email)
@@ -144,6 +188,7 @@ struct UsuarioLocalService {
             return nil
         }
     }
+    
     
     private func getAllUsers() -> [UsuarioDBDTO]{
         let request = NSFetchRequest<UsuarioDBDTO>(entityName: "UsuarioDBDTO")
